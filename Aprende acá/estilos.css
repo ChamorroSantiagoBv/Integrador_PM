@@ -1,0 +1,144 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cecece; /* Color de fondo similar al de las wikis */
+    margin: 0;
+    padding: 0;
+}
+
+#header2{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  background-color: #343a40;
+}
+
+header {
+    background-color: #343a40; /* Color de fondo del encabezado */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.content-wrapper #section1{
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ebebeb;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.content-wrapper #section2{
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    color: #007bff; /* Color de título de sección */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td, #card-name, #card-type, #card-attribute, #card-level, #card-race, #card-atk-def{
+    border: 1px solid #d2d7dd; /* Bordes de tabla */
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: #dae0e6; /* Color de fondo de encabezados de tabla */
+}
+
+footer {
+    background-color: #343a40; /* Color de fondo del pie de página */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px; /* Bordes redondeados solo en la parte inferior */
+}
+
+p {
+    line-height: 1.6;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+.classification-list {
+    margin-left: 20px;
+}
+
+.hover-zoom {
+transition: transform 0.3s ease; 
+}
+
+.hover-zoom:hover {
+ transform: scale(1.1); 
+}   
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .hover-image {
+        width: 200px; /* Reducir el tamaño de la imagen en móviles */
+    }
+
+    .content-wrapper #section1,
+    .content-wrapper #section2 {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    table, th, td {
+        font-size: 14px; /* Ajustar el tamaño de fuente en móviles */
+    }
+
+    h2 {
+        font-size: 18px; /* Reducir el tamaño de los títulos */
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .hover-image {
+        width: 220px; /* Tamaño intermedio de la imagen en tablets */
+    }
+
+    .content-wrapper #section1,
+    .content-wrapper #section2 {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    table, th, td {
+        font-size: 16px; /* Ajustar el tamaño de fuente en tablets */
+    }
+
+    h2 {
+        font-size: 20px; /* Ajustar el tamaño de los títulos */
+    }
+
+    footer {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
