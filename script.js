@@ -33,20 +33,20 @@ document.addEventListener("DOMContentLoaded", function() {
                     imgContainer.appendChild(img);
 
                     // Seleccionar los campos de atributo, nivel y ATK/DEF
-                    const attributeRow = document.getElementById('card-attribute').parentElement;
-                    const levelRow = document.getElementById('card-level').parentElement;
-                    const atkDefRow = document.getElementById('card-atk-def').parentElement;
+                    const attributeCol = document.getElementById('card-attribute').parentElement;
+                    const levelCol = document.getElementById('card-level').parentElement;
+                    const atkDefCol = document.getElementById('card-atk-def').parentElement;
 
                     // Ocultar campos si es "Spell" o "Trap"
                     if (card.type.includes('Spell') || card.type.includes('Trap')) {
-                        attributeRow.style.display = 'none';
-                        levelRow.style.display = 'none';
-                        atkDefRow.style.display = 'none';
+                        attributeCol.style.display = 'none';
+                        levelCol.style.display = 'none';
+                        atkDefCol.style.display = 'none';
                     } else {
                         // Mostrar los campos y actualizar su contenido si es un monstruo
-                        attributeRow.style.display = 'table-row';
-                        levelRow.style.display = 'table-row';
-                        atkDefRow.style.display = 'table-row';
+                        attributeCol.style.display = 'table-row';
+                        levelCol.style.display = 'table-row';
+                        atkDefCol.style.display = 'table-row';
 
                         document.getElementById('card-attribute').textContent = card.attribute || 'N/A';
                         document.getElementById('card-level').textContent = card.level || 'N/A';
