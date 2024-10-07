@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById('card-race').textContent = card.race;
                     document.getElementById('card-description').textContent = card.desc;
                     document.getElementById('card-archetype').textContent= 'Arqueotipo:' + card.archetype || 'N/A';
-                    document.getElementById('card-price').textContent = 'Precio: ' + card.card_prices[0].tcgplayer_price + '$' || 'N/A';
+                    //document.getElementById('card-price').textContent = 'Precio: ' + card.card_prices[0].tcgplayer_price + '$' || 'N/A';
                     
 
                     // Mostrar la imagen de la carta
