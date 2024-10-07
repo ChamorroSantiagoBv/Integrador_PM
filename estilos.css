@@ -1,0 +1,177 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cecece; /* Color de fondo similar al de las wikis */
+    margin: 0;
+    padding: 0;
+}
+
+#header2{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  background-color: #343a40;
+}
+
+header {
+    background-color: #343a40; /* Color de fondo del encabezado */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #555;
+}
+
+.content-wrapper #section1{
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ebebeb;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.content-wrapper #section2{
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    color: #007bff; /* Color de título de sección */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td, #card-name, #card-type, #card-attribute, #card-level, #card-race, #card-atk-def{
+    border: 1px solid #d2d7dd; /* Bordes de tabla */
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: #dae0e6; /* Color de fondo de encabezados de tabla */
+}
+
+footer {
+    background-color: #343a40; /* Color de fondo del pie de página */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px; /* Bordes redondeados solo en la parte inferior */
+}
+
+p {
+    line-height: 1.6;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+.classification-list {
+    margin-left: 20px;
+}
+
+.hover-zoom {
+    transform: perspective(1500px) rotateY(15deg);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    transition: transform 1s ease 0s;
+}
+
+.hover-zoom:hover {
+    transform: perspective(3000px) rotateY(5deg);
+}   
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .hover-image {
+        width: 200px; /* Reducir el tamaño de la imagen en móviles */
+    }
+
+    .content-wrapper #section1,
+    .content-wrapper #section2 {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    table, th, td {
+        font-size: 14px; /* Ajustar el tamaño de fuente en móviles */
+    }
+
+    h2 {
+        font-size: 18px; /* Reducir el tamaño de los títulos */
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .hover-image {
+        width: 220px; /* Tamaño intermedio de la imagen en tablets */
+    }
+
+    .content-wrapper #section1,
+    .content-wrapper #section2 {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    table, th, td {
+        font-size: 16px; /* Ajustar el tamaño de fuente en tablets */
+    }
+
+    h2 {
+        font-size: 20px; /* Ajustar el tamaño de los títulos */
+    }
+
+    footer {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
