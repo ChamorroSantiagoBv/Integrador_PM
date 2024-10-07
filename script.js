@@ -1,12 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // URL base de la API de YGOPRODeck
+document.addEventListener("DOMContentLoaded", function() { 
     const apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
 
-    // Función que realiza la solicitud y actualiza el contenido
     function fetchCardData(cardName) {
         const params = `?name=${encodeURIComponent(cardName)}`;
 
-        // Realizar la solicitud HTTP
         fetch(apiUrl + params)
             .then(response => {
                 if (!response.ok) {
@@ -18,23 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (data.data && data.data.length > 0) {
                     const card = data.data[0];
 
-                    // Insertar los datos de la carta en los elementos HTML correspondientes
-                    document.getElementById('card-name-header').textContent = card.name; // Nombre de la carta en el header
+                    // Actualizar el contenido con los datos de la carta
+                    document.getElementById('card-name-header').textContent = card.name;
                     document.getElementById('card-name').textContent = card.name;
                     document.getElementById('card-type').textContent = card.type;
-                    document.getElementById('card-attribute').textContent = card.attribute || 'N/A';
-                    document.getElementById('card-level').textContent = card.level || 'N/A';
                     document.getElementById('card-race').textContent = card.race;
-                    document.getElementById('card-atk-def').textContent = `${card.atk} / ${card.def}`;
-                    document.getElementById('card-price').textContent = 'Precio: '+ card.card_prices[0].tcgplayer_price+'$' || 'N/A';
-
-                    // Insertar descripción y clasificación
                     document.getElementById('card-description').textContent = card.desc;
-                    const classificationList = document.getElementById('card-classification');
-                   // classificationList.innerHTML = ''; // Limpiar cualquier contenido previo
-                    classificationList.innerHTML = `
-                        <li>Arquetipo: ${card.archetype || 'N/A'}</li>
-                    `;
+                    document.getElementById('card-price').textContent = 'Precio: ' + card.card_prices[0].tcgplayer_price + '$' || 'N/A';
 
                     // Mostrar la imagen de la carta
                     const img = document.createElement('img');
@@ -42,8 +29,29 @@ document.addEventListener("DOMContentLoaded", function() {
                     img.alt = card.name;
                     img.classList.add('hover-zoom');
                     const imgContainer = document.getElementById('card-image');
-                    imgContainer.innerHTML = ''; // Limpiar cualquier contenido previo
+                    imgContainer.innerHTML = '';
                     imgContainer.appendChild(img);
+
+                    // Seleccionar los campos de atributo, nivel y ATK/DEF
+                    const attributeRow = document.getElementById('card-attribute').parentElement;
+                    const levelRow = document.getElementById('card-level').parentElement;
+                    const atkDefRow = document.getElementById('card-atk-def').parentElement;
+
+                    // Ocultar campos si es "Spell" o "Trap"
+                    if (card.type.includes('Spell') || card.type.includes('Trap')) {
+                        attributeRow.style.display = 'none';
+                        levelRow.style.display = 'none';
+                        atkDefRow.style.display = 'none';
+                    } else {
+                        // Mostrar los campos y actualizar su contenido si es un monstruo
+                        attributeRow.style.display = 'table-row';
+                        levelRow.style.display = 'table-row';
+                        atkDefRow.style.display = 'table-row';
+
+                        document.getElementById('card-attribute').textContent = card.attribute || 'N/A';
+                        document.getElementById('card-level').textContent = card.level || 'N/A';
+                        document.getElementById('card-atk-def').textContent = `${card.atk} / ${card.def}` || 'N/A';
+                    }
                 } else {
                     console.log('No se encontró la carta.');
                 }
@@ -56,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Escuchar el evento submit del formulario
     const form = document.getElementById('card-search-form');
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que el formulario se envíe normalmente
-        const cardName = document.getElementById('card-search-input').value; // Obtener el valor del input de búsqueda
+        event.preventDefault();
+        const cardName = document.getElementById('card-search-input').value;
         if (cardName) {
-            fetchCardData(cardName); // Llamar a la función para buscar la carta
+            fetchCardData(cardName);
         } else {
             alert('Por favor ingrese el nombre de una carta.');
         }
