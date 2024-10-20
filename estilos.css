@@ -124,33 +124,8 @@ p {
     transform: perspective(3000px) rotateY(5deg);
 }   
 
-/* Pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
-    .hover-image {
-        width: 200px; /* Reducir el tamaño de la imagen en móviles */
-    }
 
-    .content-wrapper #section1,
-    .content-wrapper #section2 {
-        padding: 10px;
-        margin: 10px;
-    }
-
-    table, th, td {
-        font-size: 14px; /* Ajustar el tamaño de fuente en móviles */
-    }
-
-    h2 {
-        font-size: 18px; /* Reducir el tamaño de los títulos */
-    }
-
-    footer {
-        padding: 10px;
-        font-size: 14px;
-    }
-}
-
-/* Pantallas medianas (tablets) */
+/* Pantallas medianas */
 @media (max-width: 768px) {
     .hover-image {
         width: 220px; /* Tamaño intermedio de la imagen en tablets */
