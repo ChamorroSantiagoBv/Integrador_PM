@@ -4,74 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>Document</title>
+    <title>Wiki</title>
+    <link rel="shortcut icon" href="github.svg">
 </head>
 <body>
+    <!-- Header con el formulario de búsqueda -->
     <header>
         <div class="search-container">
-            <form id="card-search-form" action="#" method="GET">
+            <form id="card-search-form" method="GET">
                 <input type="text" id="card-search-input" placeholder="Buscar carta..." name="search" class="search-bar">
                 <button type="submit" id="fetch-card-btn" class="search-button">Buscar</button>
             </form>
         </div>
     </header>
 
-    <div class="content-wrapper">
+    <!-- Contenedor principal de la carta -->
+    <main class="content-wrapper">
         <section id="section1">
             <header id="header2">
-                <h1 id="card-name-header">Nombre de la carta</h1> <!-- ID para el nombre -->
+                <h1 id="card-name-header">Nombre de la carta</h1>
             </header>
+
+            <!-- Contenido de la carta -->
             <section id="section2">
+                <button id="saveBtn" type="button" aria-label="Guardar carta favorita">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                    </svg>
+                </button>                  
+
                 <div class="content-flex">
                     <div class="imagen">
-                        <div id="card-image" class="image-container">
-                            <!-- La imagen de la carta -->
-                        </div>
+                        <div id="card-image" class="image-container"></div> <!-- Imagen de la carta -->
                         <div id="card-price">
-                            <p>precio: N/A</p>
+                            <p>Precio: N/A</p>
                         </div>
                     </div>
+
+                    <!-- Datos de la carta -->
                     <div class="datos-carta">
                         <h2>Datos de la carta</h2>
                         <table>
                             <tr>
                                 <th>Nombre:</th>
-                                <td id="card-name">-</td> <!-- ID para el nombre -->
+                                <td id="card-name">-</td>
                             </tr>
                             <tr>
                                 <th>Carta:</th>
-                                <td id="card-type">-</td> <!-- ID para el tipo -->
+                                <td id="card-type">-</td>
                             </tr>
                             <tr>
                                 <th>Atributo:</th>
-                                <td id="card-attribute">-</td> <!-- ID para el atributo -->
+                                <td id="card-attribute">-</td>
                             </tr>
                             <tr>
                                 <th>Nivel:</th>
-                                <td id="card-level">-</td> <!-- ID para el nivel -->
+                                <td id="card-level">-</td>
                             </tr>
                             <tr>
                                 <th>Tipo:</th>
-                                <td id="card-race">-</td> <!-- ID para la raza -->
+                                <td id="card-race">-</td>
                             </tr>
                             <tr>
                                 <th>ATK/DEF:</th>
-                                <td id="card-atk-def">---/---</td> <!-- ID para ATK/DEF -->
+                                <td id="card-atk-def">---/---</td>
                             </tr>
                         </table>
                     </div>
                 </div>
 
+                <!-- Descripción y clasificación de la carta -->
                 <h2>Descripción de la carta</h2>
-                <p id="card-description">---</p> <!-- ID para la descripción -->
+                <p id="card-description">---</p>
+
                 <h2>Clasificación por tipo</h2>
                 <p id="card-archetype">Arqueotipo:</p>
             </section>
         </section>
-    </div>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <p>© 2024 Tu Wiki. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
